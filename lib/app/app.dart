@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_coffee_app/app/widgets/bottom_bar.dart';
+import 'package:the_coffee_app/app/widgets/news_info.dart';
+//import 'package:the_coffee_app/app/widgets/product_info.dart';
 import 'package:the_coffee_app/app/widgets/top_bar.dart';
 
 class MyApp extends StatelessWidget {
@@ -75,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -93,15 +95,16 @@ class _MyHomePageState extends State<MyHomePage> {
           // center the children vertically; the main axis here is the vertical
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             TopBar(),
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                //ProductInfo(),
+                //ProductInfo()
+                NewsInfo()
+              ],
             ),
           ],
         ),
